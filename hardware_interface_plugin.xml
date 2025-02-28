@@ -1,0 +1,9 @@
+<library path="joint_driver">
+  <class name="joint_driver/ArduinoHardware"
+         type="joint_driver::ArduinoHardware"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+		ROS2 Control System Driver for the a 3DOF Platform using an Arduino.
+    </description>
+  </class>
+</library>
