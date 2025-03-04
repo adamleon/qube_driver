@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- This macro generates a ROS2 interface to a Quanser Qube -->
-    <xacro:macro name="joint_driver_ros2_control" params="name prefix baud_rate device simulation">
+    <xacro:macro name="qube_driver_ros2_control" params="name prefix baud_rate device simulation">
         <ros2_control name="${name}" type="system">
         <xacro:if value="${simulation}"> <!-- create a fake hardware if it is a simulation -->
             <hardware>
