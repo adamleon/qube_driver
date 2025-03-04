@@ -10,7 +10,7 @@ import xacro
 
 def generate_launch_description():
     initial_joint_controllers = PathJoinSubstitution(
-        [FindPackageShare("joint_driver"), "config", "joint_controllers.yaml"]
+        [FindPackageShare("qube_driver"), "config", "joint_controllers.yaml"]
     )
 
     control_node = Node(
