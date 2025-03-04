@@ -1,2 +1,2 @@
-# joint_driver
-Joint Driver for a Quanser Qube
+# qube_driver
+Driver for a Quanser Qube
