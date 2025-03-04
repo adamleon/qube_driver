@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(joint_driver)
+project(qube_driver)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -20,25 +20,25 @@ FetchContent_Declare(
   )
   FetchContent_MakeAvailable(serial)
   
-  add_library(joint_driver
+  add_library(qube_driver
   SHARED
   src/joint_driver.cpp
   )
   
-  target_include_directories(joint_driver
+  target_include_directories(qube_driver
   PRIVATE
   include
   )
   
-  target_link_libraries(joint_driver serial)
-  ament_target_dependencies(joint_driver
+  target_link_libraries(qube_driver serial)
+  ament_target_dependencies(qube_driver
   hardware_interface
   controller_manager
   pluginlib
   rclcpp
   )
   
-  target_link_libraries(joint_driver serial)
+  target_link_libraries(qube_driver serial)
   pluginlib_export_plugin_description_file(hardware_interface hardware_interface_plugin.xml)
   
   
@@ -51,11 +51,11 @@ FetchContent_Declare(
     rclcpp
     )
     ament_export_libraries(
-      joint_driver
+      qube_driver
       )
       
 install(
-  TARGETS joint_driver
+  TARGETS qube_driver
   DESTINATION lib
 )
 
