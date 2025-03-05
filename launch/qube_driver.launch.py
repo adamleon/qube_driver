@@ -24,18 +24,18 @@ def generate_launch_description():
 
     joint_state_spawner = Node(
         package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "joint_state_broadcaster"
-            ]
+        executable="spawner",
+        arguments=[
+            "joint_state_broadcaster"
+        ]
     )
 
     controller_spawner = Node(
         package="controller_manager",
-            executable="spawner",
-            arguments=[
-                "velocity_controller"
-            ]
+        executable="spawner",
+        arguments=[
+            "velocity_controller"
+        ]
     )
 
     nodes_to_start = [

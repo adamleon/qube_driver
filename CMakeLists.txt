@@ -19,10 +19,10 @@ FetchContent_Declare(
   GIT_TAG main
   )
   FetchContent_MakeAvailable(serial)
-  
+    
   add_library(qube_driver
   SHARED
-  src/joint_driver.cpp
+  src/qube_driver.cpp
   )
   
   target_include_directories(qube_driver

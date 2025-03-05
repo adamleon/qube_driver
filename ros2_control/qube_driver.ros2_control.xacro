@@ -7,7 +7,7 @@
             <hardware>
                 <plugin>mock_components/GenericSystem</plugin>
                 <param name="calculate_dynamics">true</param>
-                <param name="custom_interface_with_following_offset"></param>
+                <param name="custom_interface_with_following_offset">0</param>
                 <param name="disable_commands">false</param>
                 <param name="mock_gpio_commands">false</param>
                 <param name="mock_sensor_commands">false</param>
@@ -16,7 +16,7 @@
         </xacro:if>
         <xacro:unless value="${simulation}"> <!-- create a real hardware if it is not a simulation -->
             <hardware>
-                <plugin>joint_driver/ArduinoHardware</plugin>
+                <plugin>qube_driver/ArduinoHardware</plugin>
                 <param name="motor_name">motor_joint</param>
                 <param name="device">${device}</param> <!-- name of the USB device -->
                 <param name="baud_rate">${baud_rate}</param> <!-- baud rate of the Arduino -->
@@ -25,8 +25,12 @@
         </xacro:unless>
             <joint name="${prefix}motor_joint"> <!-- define joint interfaces -->
                 <command_interface name="velocity" />
-                <state_interface name="position" />
-                <state_interface name="velocity" />
+                <state_interface name="position" >
+                    <param name="initial_value">0.0</param>
+                </state_interface>
+                <state_interface name="velocity" >
+                    <param name="initial_value">0.0</param>
+                </state_interface>
             </joint>
         </ros2_control>
     </xacro:macro>

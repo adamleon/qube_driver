@@ -1,9 +1,9 @@
-<library path="joint_driver">
-  <class name="joint_driver/ArduinoHardware"
-         type="joint_driver::ArduinoHardware"
+<library path="qube_driver">
+  <class name="qube_driver/ArduinoHardware"
+         type="qube_driver::ArduinoHardware"
          base_class_type="hardware_interface::SystemInterface">
     <description>
-		ROS2 Control System Driver for the a 3DOF Platform using an Arduino.
+		ROS2 Control System Driver for Quanser Qube.
     </description>
   </class>
 </library>
